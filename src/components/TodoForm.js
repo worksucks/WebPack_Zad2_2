@@ -22,6 +22,13 @@ class TodoForm extends React.Component {
   handleSubmit = (event)  => {
     event.preventDefault();
     this.props.addTodo(this.state.todo, this.state.task_number)
+    this.setState({todo: 'NIC'});
+    this.setState({task_number: 0});
+  }
+
+  handleDelete = (event) => {
+    evet.preventDefault();
+    this.props.removeTodo(this.state.id)
   }
 
   render() {
@@ -34,6 +41,7 @@ class TodoForm extends React.Component {
         Task_Number: <input type="number" value={Task_Number} onChange={this.handleTask_Number}/>
         <button>Dodaj zadanie</button>
       </form>
+
     )
   }
 }
