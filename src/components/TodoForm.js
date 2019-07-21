@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 class TodoForm extends React.Component {
   static propTypes = {
-    addTodo: propTypes.func,
+    addTodo: PropTypes.func,
   };
 
   state = {
@@ -28,13 +28,13 @@ class TodoForm extends React.Component {
 
     const {todo, Task_Number} = this.state;
 
-    return {
+    return (
       <form onSubmit={this.handleSubmit}>
         zadanie: <input type="text" value={todo} onChange={this.handleTodo}/>
         Task_Number: <input type="number" value={Task_Number} onChange={this.handleTask_Number}/>
         <button>Dodaj zadanie</button>
       </form>
-    }
+    )
   }
 }
 

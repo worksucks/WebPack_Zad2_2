@@ -1,19 +1,20 @@
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
-class Todolist extends React.component {
-  static: PropTypes = {
+class TodoList extends React.component {
+  static propTypes = {
     data: PropTypes.array
   }
 
 render () {
     const {data} = this.props;
-    return
+    return (
     <ul>
-      {data.map(list => <li key={list.id}>{list.todo}, {list.task_number}</li>}
+      {data.map(list => <li key={list.id}>{list.todo}, {list.task_number}</li>)}
     </ul>
+  );
 }
 
 }
 
-export default Todolist;
+export default TodoList;
