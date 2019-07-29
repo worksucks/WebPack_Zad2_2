@@ -12,7 +12,7 @@ class App extends React.Component {
 
     addTodo = (todo, task_number) => {
         const record ={
-              index: uuid.v4(),
+              id: uuid.v4(),
               text: todo,
               number: task_number,
         };
@@ -28,7 +28,7 @@ class App extends React.Component {
     render() {
       return (
           <div className={style.TodoApp}>
-              <TodoList data={this.state.data}/>
+              <TodoList data={this.state.data} removeTodo={this.removeTodo} />
               <TodoForm addTodo={this.addTodo}/>
               </div>
       );
