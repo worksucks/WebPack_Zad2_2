@@ -14,8 +14,7 @@ render () {
 
     return (
       <ul>
-        {data.map(list => <li key={list.id}>{list.todo}, {list.task_number}<button onClick={this.props.removeTodo(list.id)}>Usuń zadanie</button></li>)}
-
+        {data.map(list => <li key={list.id}>{list.todo}, {list.task_number}<button onClick={() => {this.props.removeTodo(list.id)})>Usuń zadanie</button></li>)}
       </ul>
     )
 }
